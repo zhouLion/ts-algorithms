@@ -13,18 +13,17 @@
   如果顶点对之间的边是有权重的,该图可称为加权图。
  */
 
-function createGraphVertex<T> (value: T, getKey: (value: T) => string) {
+export function createGraphVertex<T>(value: T, getKey: (value: T) => string) {
   const vertex = {
     value,
     key: getKey(value),
-    edges: Object.freeze([]),
   };
   return vertex;
 }
 
-type GraphVertex = ReturnType<typeof createGraphVertex>;
+export type GraphVertex = ReturnType<typeof createGraphVertex>;
 
-function createGraphEdge(startVertex: GraphVertex, endVertex: GraphVertex, weight = 0) {
+export function createGraphEdge(startVertex: GraphVertex, endVertex: GraphVertex, weight = 0) {
   const edge = {
     startVertex,
     endVertex,
@@ -33,9 +32,9 @@ function createGraphEdge(startVertex: GraphVertex, endVertex: GraphVertex, weigh
   return edge;
 }
 
-type GraphEdge = ReturnType<typeof createGraphEdge>;
+export type GraphEdge = ReturnType<typeof createGraphEdge>;
 
-export const createGraph = (isDirected = false) => {
+export function createGraph(isDirected = false) {
   const graph = Object.freeze({
     isDirected,
     vertices: [] as Array<GraphVertex>,
@@ -60,16 +59,33 @@ export const createGraph = (isDirected = false) => {
     },
 
     addEdge(edge: GraphEdge) {
-      this.addVertex(edge.startVertex);
-      this.addVertex(edge.endVertex);
-      this.edges.push(edge);
+      this
+        .addVertex(edge.startVertex)
+        .addVertex(edge.endVertex)
+        .edges.push(edge);
       return this;
+    },
+
+    neighbors(vertex: GraphVertex) {
+      return this.edges.filter((edge) => {
+        return edge.startVertex === vertex || edge.endVertex === vertex;
+      });
     },
 
     toJSON() {
       const { isDirected } = this;
-    }
+      const { vertices, edges } = this;
+      const verticesJSON = vertices.map((vertex) => {
+        const { key, value } = vertex;
+        return { key, value };
+      });
+      const edgesJSON = edges.map((edge) => {
+        const { startVertex, endVertex, weight } = edge;
+        return { start: startVertex.key, end: endVertex.key, weight };
+      });
+      return { isDirected, vertices: verticesJSON, edges: edgesJSON };
+    },
   });
-  return graph;
-};
 
+  return graph;
+}
