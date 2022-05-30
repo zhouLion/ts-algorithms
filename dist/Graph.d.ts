@@ -31,11 +31,11 @@ declare function createGraphEdge(startVertex: GraphVertex, endVertex: GraphVerte
 declare type GraphEdge = ReturnType<typeof createGraphEdge>;
 declare function createGraph(isDirected?: boolean): Readonly<{
     isDirected: boolean;
-    vertices: {
+    readonly vertices: {
         value: unknown;
         key: string;
     }[];
-    edges: {
+    readonly edges: {
         startVertex: {
             value: unknown;
             key: string;

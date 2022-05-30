@@ -35,10 +35,18 @@ export function createGraphEdge(startVertex: GraphVertex, endVertex: GraphVertex
 export type GraphEdge = ReturnType<typeof createGraphEdge>;
 
 export function createGraph(isDirected = false) {
+  const vertices: Array<GraphVertex> = [];
+  const edges: Array<GraphEdge> = [];
+
   const graph = Object.freeze({
     isDirected,
-    vertices: [] as Array<GraphVertex>,
-    edges: [] as Array<GraphEdge>,
+    get vertices() {
+      return vertices;
+    },
+    get edges() {
+      return edges;
+    },
+
     createGraphEdge,
     createGraphVertex,
 
@@ -48,12 +56,12 @@ export function createGraph(isDirected = false) {
         existedVertex.value = vertex.value;
         return this;
       }
-      this.vertices.push(vertex);
+      vertices.push(vertex);
       return this;
     },
 
     getVertex(key: string) {
-      return this.vertices.find((vertice) => {
+      return vertices.find((vertice) => {
         return vertice.key === key;
       });
     },
@@ -74,7 +82,6 @@ export function createGraph(isDirected = false) {
 
     toJSON() {
       const { isDirected } = this;
-      const { vertices, edges } = this;
       const verticesJSON = vertices.map((vertex) => {
         const { key, value } = vertex;
         return { key, value };
