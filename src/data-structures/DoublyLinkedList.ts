@@ -54,6 +54,25 @@ export function createDoublyLinkedList<T>() {
       return this;
     },
 
+    // TODO: Implement find()、 remove()
+    // find(query: string | ((data: T) => boolean)) {
+    //   if (!this.head) return null;
+    //   let current = this.head;
+    //   while (current) {
+    //     if (typeof query === 'string') {
+    //       if (current.value === query) {
+    //         return current;
+    //       }
+    //     } else {
+    //       if (query(current.value)) {
+    //         return current;
+    //       }
+    //     }
+    //     current = current.next;
+    //   }
+    //   return null;
+    // },
+
     delete(value: T) {
       if (!this.head) {
         return null;
