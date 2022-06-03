@@ -7,5 +7,5 @@ export function createProrityQueue<T>() {
       priorities.set(item, priority);
       return this;
     }
-  }
+  };
 }

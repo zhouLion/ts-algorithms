@@ -11,8 +11,8 @@
 `B` - 初学者， `A` - 进阶
 
 * [x] `B` [链表](src/data-structures/LinkedList.ts)
-* [x] `B` [双向链表](src/data-structures/doubly-linked-list/README.zh-CN.md)
-* [ ] `B` [队列](src/data-structures/queue/README.zh-CN.md)
+* [x] `B` [双向链表](src/data-structures/DoublyLinkedList.ts)
+* [x] `B` [队列](src/data-structures/Queue.ts)
 * [x] `B` [栈](src/data-structures/Stack.ts)
 * [ ] `B` [哈希表(散列)](src/data-structures/)
 * [ ] `B` [堆](src/data-structures/heap/README.zh-CN.md) - 最大堆 & 最小堆
