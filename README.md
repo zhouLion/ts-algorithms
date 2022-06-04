@@ -14,7 +14,7 @@
 * [x] `B` [双向链表](src/data-structures/DoublyLinkedList.ts)
 * [x] `B` [队列](src/data-structures/Queue.md)
 * [x] `B` [栈](src/data-structures/Stack.md)
-* [ ] `B` [哈希表(散列)](src/data-structures/)
+* [x] `B` [哈希表(散列)](src/data-structures/HashTable.md)
 * [x] `B` [堆](src/data-structures/Heap.md) - 最大堆 & 最小堆
 * [ ] `B` [优先队列](src/data-structures/priority-queue/README.zh-CN.md)
 * [ ] `A` [字典树](src/data-structures/trie/README.zh-CN.md)
