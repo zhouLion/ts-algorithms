@@ -10,12 +10,12 @@
 
 `B` - 初学者， `A` - 进阶
 
-* [x] `B` [链表](src/data-structures/LinkedList.ts)
+* [x] `B` [链表](src/data-structures/LinkedList.md)
 * [x] `B` [双向链表](src/data-structures/DoublyLinkedList.ts)
-* [x] `B` [队列](src/data-structures/Queue.ts)
-* [x] `B` [栈](src/data-structures/Stack.ts)
+* [x] `B` [队列](src/data-structures/Queue.md)
+* [x] `B` [栈](src/data-structures/Stack.md)
 * [ ] `B` [哈希表(散列)](src/data-structures/)
-* [ ] `B` [堆](src/data-structures/heap/README.zh-CN.md) - 最大堆 & 最小堆
+* [x] `B` [堆](src/data-structures/Heap.md) - 最大堆 & 最小堆
 * [ ] `B` [优先队列](src/data-structures/priority-queue/README.zh-CN.md)
 * [ ] `A` [字典树](src/data-structures/trie/README.zh-CN.md)
 * [ ] `A` [树](src/data-structures/tree/README.zh-CN.md)
