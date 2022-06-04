@@ -1,1 +1,0 @@
-function c(e){let t=[];return e&&Array.isArray(e)&&e.length&&t.push(...e),{push(r){t.push(r)},pop(){return t.pop()},peek(){return t[0]},isEmpty(){return t.length===0},size(){return t.length},clear(){t.length=0},toArray(){return t.slice()},toString(){return t.join(", ")}}}export{c as a};

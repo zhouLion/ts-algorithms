@@ -2,4 +2,4 @@ export { GraphEdge, GraphVertex, createGraph, createGraphEdge, createGraphVertex
 export { Stack, createStack } from './Stack.js';
 export { LinkedNode, craeteLinkedNode, createLinkedList } from './LinkedList.js';
 export { DoublyLinkedListNode, createDoublyLinkedList, createDoublyLinkedListNode } from './DoublyLinkedList.js';
-export { createQueue } from './Queue.js';
+export { Queue, createQueue } from './Queue.js';

@@ -1,16 +1,16 @@
 export type Stack = {
   push(value: unknown): void;
   pop(): unknown;
-  valueof(): unknown[];
+  valueof(): readonly unknown[];
   toString(): string;
 }
 
+// 采用数组去实现栈，因为它足够简单
 export const createStack = <T>() => {
-  // 采用数组去实现栈，因为它足够简单
   const items: T[] = [];
-  const push = items.push;
-  const pop = items.pop;
-  const valueof = () => items;
+  const push = (...args: T[]) => items.push.bind(items, ...args);
+  const pop = () => items.pop();
+  const valueof = () => Object.freeze(items);
   const toString = () => `[${items.join(', ')}]`;
   return { push, pop, valueof, toString };
 };
