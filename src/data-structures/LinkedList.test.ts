@@ -4,7 +4,7 @@ import {
   // craeteLinkedNode,
 } from "./LinkedList";
 
-describe('LinkedList', () => {
+describe('🧪 LinkedList', () => {
   it('初始化创建时，head 与 tail 相等', () => {
     const linkedList = createLinkedList();
     expect(linkedList.head.value).toBeNull();
