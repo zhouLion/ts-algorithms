@@ -42,7 +42,7 @@ export function createLinkedList<T>() {
       return this;
     },
 
-    insert: function (value: T, index: number) {
+    insert(value: T, index: number) {
       index = Math.max(0, index);
       if (index === 0) {
         this.prepend(value);
